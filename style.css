@@ -833,6 +833,110 @@ body {
 }
 
 /* =========================================================
+   DIE TRANSFORMATION (VORHER VS. NACHHER)
+   ========================================================= */
+.transformation-cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.trans-card {
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+.trans-before {
+  background: #ffffff;
+  border: 2px solid #fecaca;
+}
+.trans-after {
+  background: #ffffff;
+  border: 2px solid var(--orange);
+  box-shadow: 0 10px 30px rgba(226, 106, 39, 0.12);
+}
+.trans-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+.trans-tag {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 8px;
+}
+.tag-before {
+  background: #fef2f2;
+  color: #ef4444;
+}
+.tag-after {
+  background: var(--orange-soft);
+  color: var(--orange);
+}
+.trans-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--dark);
+}
+.trans-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.trans-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+}
+.trans-list li i {
+  font-size: 1.15rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.text-red { color: #ef4444 !important; }
+.trans-list li strong {
+  color: var(--dark);
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+.trans-list li p {
+  color: var(--text-body);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.trans-summary-box {
+  background: var(--orange-soft);
+  border: 1px solid var(--orange-border);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+.trans-summary-box i {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+.trans-summary-box h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.trans-summary-box p {
+  font-size: 0.98rem;
+  color: var(--dark);
+}
+
+/* =========================================================
    CIERRE FINAL
    ========================================================= */
 .section-closing-final {
