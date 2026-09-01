@@ -1,17 +1,20 @@
 /* =========================================================
-   HANDYKLINIK MEPPEN - DISEÑO SIMPLE, CLARO Y DIRECTO
-   Menos es más: 1 idea clara por bloque, lectura sin esfuerzo
+   HANDYKLINIK MEPPEN - VENDEDOR INTELIGENTE 24/7
+   Diseño ultra claro, comprensible para todos y foco en Ticket Medio
    ========================================================= */
 
 :root {
   --orange: #e26a27;
-  --orange-dark: #cb5716;
-  --orange-light: #fff3ec;
+  --orange-dark: #cc5616;
+  --orange-soft: #fff3ec;
   --orange-border: #fed7aa;
 
   --dark: #1e293b;
-  --text-body: #475569;
+  --text-body: #334155;
   --text-muted: #64748b;
+
+  --green: #10b981;
+  --green-soft: #ecfdf5;
 
   --bg-white: #ffffff;
   --bg-soft: #f8fafc;
@@ -52,21 +55,24 @@ body {
 }
 
 .container-narrow {
-  max-width: 780px;
+  max-width: 800px;
 }
 
 .text-center { text-align: center; }
-.text-orange { color: var(--orange); }
+.text-orange { color: var(--orange) !important; }
+.text-green { color: var(--green) !important; }
 .bg-soft { background-color: var(--bg-soft); }
-.mb-50 { margin-bottom: 40px; }
+.bg-orange-soft { background-color: var(--orange-soft); }
 
-/* Top Bar */
+/* =========================================================
+   TOP BAR & HEADER
+   ========================================================= */
 .top-bar {
   background-color: var(--orange);
   color: #ffffff;
   font-size: 0.85rem;
   padding: 8px 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 .top-bar-flex {
   display: flex;
@@ -76,7 +82,6 @@ body {
   gap: 10px;
 }
 
-/* Header */
 .header {
   background: #ffffff;
   border-bottom: 1px solid var(--border);
@@ -96,7 +101,7 @@ body {
 }
 .logo-main {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 900;
   color: var(--dark);
   line-height: 1;
@@ -108,7 +113,7 @@ body {
   color: var(--dark);
 }
 
-/* Buttons */
+/* Botones */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -122,9 +127,9 @@ body {
   border: none;
   transition: all 0.2s ease;
 }
-.btn-sm { padding: 8px 18px; font-size: 0.9rem; }
+.btn-sm { padding: 8px 18px; font-size: 0.88rem; }
 .btn-xl { padding: 16px 36px; font-size: 1.15rem; }
-.btn-block { width: 100%; }
+.btn-full { width: 100%; }
 
 .btn-primary {
   background-color: var(--orange);
@@ -139,7 +144,7 @@ body {
 .btn-white {
   background-color: #ffffff;
   color: var(--dark);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 .btn-white:hover {
   background-color: #f8fafc;
@@ -147,25 +152,25 @@ body {
 }
 
 /* =========================================================
-   HERO: Banner Naranja Limpio
+   HERO BANNER
    ========================================================= */
 .hero {
-  background: var(--orange);
+  background: linear-gradient(150deg, #e26a27 0%, #d85d1f 100%);
   color: #ffffff;
   padding: 60px 0 90px;
   position: relative;
   text-align: center;
 }
 .hero-container {
-  max-width: 820px;
+  max-width: 840px;
 }
 .hero-badge {
   display: inline-block;
   background: rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 6px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 6px 18px;
   border-radius: 100px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   margin-bottom: 20px;
@@ -175,80 +180,76 @@ body {
   font-size: 2.8rem;
   font-weight: 900;
   line-height: 1.15;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .hero-highlight {
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.5);
   text-underline-offset: 6px;
 }
-.hero-subtitle {
+.hero-lead {
   font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 1.55;
   opacity: 0.95;
   margin-bottom: 30px;
 }
 
-/* Chat Example Sencillo */
-.chat-example-box {
+/* Chat Simple en Hero */
+.chat-simple-card {
   background: #ffffff;
   color: var(--dark);
   border-radius: var(--radius-lg);
   padding: 24px;
   text-align: left;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
   margin-bottom: 24px;
 }
-.chat-row {
-  margin-bottom: 14px;
-  display: flex;
+.chat-bubble {
+  padding: 14px 18px;
+  font-size: 0.98rem;
+  margin-bottom: 12px;
 }
-.user-row { justify-content: flex-end; }
-.bot-row { justify-content: flex-start; }
-
-.user-bubble {
-  background: var(--orange);
-  color: #ffffff;
-  padding: 12px 18px;
-  border-radius: 18px 18px 4px 18px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  max-width: 85%;
-}
-.bot-bubble {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  padding: 16px 20px;
-  border-radius: 4px 18px 18px 18px;
-  font-size: 0.95rem;
-  max-width: 90%;
-}
-.bot-name {
+.bubble-tag {
   display: block;
+  font-size: 0.78rem;
   font-weight: 800;
-  color: var(--orange);
-  font-size: 0.8rem;
-  margin-bottom: 6px;
   text-transform: uppercase;
+  margin-bottom: 4px;
 }
-.bot-btn-wrap {
+.user-bubble {
+  background: var(--orange-soft);
+  border: 1px solid var(--orange-border);
+  border-radius: 14px;
+}
+.user-bubble .bubble-tag { color: var(--orange); }
+
+.bot-bubble {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 0;
+}
+.bot-tag { color: var(--orange); }
+
+.chat-upsell-pill {
+  background: #ffffff;
+  border: 2px dashed var(--orange);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.92rem;
   margin-top: 10px;
-}
-.tag-stock {
-  font-size: 0.8rem;
-  color: #10b981;
-  font-weight: 700;
+  color: var(--dark);
 }
 
-.hero-points {
+.hero-perks {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
 }
-.hero-points span {
+.hero-perks span {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -271,10 +272,10 @@ body {
    SECCIONES GENERALES
    ========================================================= */
 .section {
-  padding: 70px 0;
+  padding: 75px 0;
 }
 
-.pill-label {
+.pill {
   display: inline-block;
   padding: 4px 14px;
   border-radius: 100px;
@@ -285,105 +286,243 @@ body {
   margin-bottom: 12px;
 }
 .pill-orange {
-  background: var(--orange-light);
+  background: var(--orange-soft);
   color: var(--orange);
+  border: 1px solid var(--orange-border);
 }
 .pill-red {
   background: #fef2f2;
   color: #ef4444;
+  border: 1px solid #fecaca;
+}
+.pill-green {
+  background: var(--green-soft);
+  color: var(--green);
+  border: 1px solid #a7f3d0;
 }
 
-.title-main {
+.section-title {
   font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 800;
   color: var(--dark);
   line-height: 1.25;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
-.section-desc {
+.section-subtitle {
   font-size: 1.15rem;
   color: var(--text-muted);
-  margin-bottom: 30px;
+  margin-bottom: 32px;
+  line-height: 1.5;
 }
 
-/* =========================================================
-   BLOQUE 1: EL PROBLEMA
-   ========================================================= */
-.problem-statement-card {
+.card-box {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 36px 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
-.lead-text {
-  font-size: 1.3rem;
+.big-text {
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--dark);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
-.sub-text {
+.medium-text {
   font-size: 1.1rem;
   color: var(--text-muted);
   margin-bottom: 24px;
 }
-.highlight-red-box {
+.alert-box-red {
   background: #fff5f5;
   border-left: 4px solid #ef4444;
-  padding: 16px;
+  padding: 16px 20px;
   border-radius: 0 8px 8px 0;
   font-size: 1.15rem;
   color: #991b1b;
 }
 
-/* =========================================================
-   BLOQUE 2: LA SOLUCIÓN
-   ========================================================= */
-.simple-queries-list {
+/* Query List */
+.query-list-simple {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 600px;
-  margin: 0 auto 30px;
+  margin: 0 auto 28px;
   text-align: left;
 }
-.query-item {
+.q-item {
   background: #ffffff;
   border: 1px solid var(--border);
-  padding: 12px 18px;
+  padding: 14px 20px;
   border-radius: var(--radius-sm);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--dark);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
-.solution-promise {
-  font-size: 1.2rem;
+.solution-highlight {
+  font-size: 1.15rem;
+  color: var(--dark);
+}
+
+/* =========================================================
+   SECCIÓN ESPECIAL: AUMENTO DEL TICKET MEDIO
+   ========================================================= */
+.section-ticket-medio {
+  background: #ffffff;
+}
+.ticket-reasons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.ticket-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 30px 24px;
+}
+.ticket-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+.ticket-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+.ticket-card p {
+  font-size: 1rem;
+  color: var(--text-body);
+  margin-bottom: 14px;
+}
+.acc-mini-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+.acc-mini-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Comparativa Ticket Medio (Antes vs Después) */
+.comparison-ticket-box {
+  background: #ffffff;
+  border: 2px solid var(--orange);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: 0 10px 30px rgba(226, 106, 39, 0.12);
+}
+.comp-ticket-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+.ticket-vs-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1.15fr;
+  align-items: center;
+  gap: 20px;
+}
+.ticket-side {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+}
+.side-before {
+  opacity: 0.85;
+}
+.side-after {
+  background: var(--orange-soft);
+  border: 2px solid var(--orange);
+}
+.side-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: #e2e8f0;
+  color: var(--dark);
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.badge-winner {
+  background: var(--orange);
+  color: #ffffff;
+}
+.side-amount {
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+.side-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.ticket-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.92rem;
+  color: var(--dark);
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  border: 1px solid var(--orange-border);
+}
+.ticket-winner-tag {
+  font-size: 0.95rem;
+  color: var(--green);
+  font-weight: 700;
+}
+.ticket-arrow {
+  font-size: 1.6rem;
   color: var(--orange);
 }
 
 /* =========================================================
-   BLOQUE 3: LAS 4 FUNCIONES (Tarjetas Grandes y Limpias)
+   3 PASOS PARA TUS 7 TIENDAS
    ========================================================= */
-.features-vertical-list {
+.three-steps-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 820px;
-  margin: 0 auto;
+  gap: 18px;
 }
-.feature-item-card {
+.step-box {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 30px;
+  padding: 24px;
   display: flex;
-  gap: 24px;
+  gap: 20px;
   align-items: flex-start;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
-.feature-number {
-  width: 44px;
-  height: 44px;
+.step-num {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--orange);
   color: #ffffff;
@@ -391,190 +530,178 @@ body {
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 900;
   flex-shrink: 0;
 }
-.feature-body h3 {
+.step-content h4 {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--dark);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
-.feature-body p {
+.step-content p {
+  font-size: 1rem;
   color: var(--text-body);
-  font-size: 1.05rem;
-  margin-bottom: 12px;
-}
-.feature-result {
-  background: var(--orange-light);
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  color: var(--dark);
 }
 
-/* =========================================================
-   BLOQUE 4: ACCESORIOS Y AHORRO
-   ========================================================= */
-.two-simple-blocks {
+/* FAQ Simple Grid */
+.faq-simple-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 18px;
+  text-align: left;
 }
-.simple-benefit-card {
+.faq-item-box {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 30px 24px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
-.benefit-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  background: var(--orange-light);
-  color: var(--orange);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  margin-bottom: 16px;
-}
-.simple-benefit-card h3 {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 800;
+.faq-item-box strong {
+  display: block;
+  font-size: 1.05rem;
   color: var(--dark);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
-.simple-benefit-card p {
+.faq-item-box p {
+  font-size: 0.92rem;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-}
-.simple-check-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-weight: 600;
-  color: var(--dark);
-  font-size: 0.95rem;
-}
-.simple-check-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
-/* =========================================================
-   BLOQUE 5: ALCANCE
-   ========================================================= */
-.scope-clean-box {
+/* Scope Grid */
+.scope-grid-clean {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  text-align: left;
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  text-align: left;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
-.scope-item {
+.scope-clean-item {
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 600;
   color: var(--dark);
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 /* =========================================================
-   BLOQUE 6: INVERSIÓN (Super Claro)
+   INVERSIÓN (Super Claro)
    ========================================================= */
-.simple-pricing-card {
+.pricing-super-card {
   background: #ffffff;
   border: 2px solid var(--orange);
   border-radius: var(--radius-lg);
-  padding: 40px 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  padding: 40px 32px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
 }
-.price-row-main {
-  display: flex;
-  justify-content: center;
+.price-split-boxes {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 30px;
+  gap: 24px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
   margin-bottom: 24px;
 }
-.price-item-block {
+.price-side {
   text-align: center;
 }
-.price-tag-title {
+.price-label {
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--text-muted);
   text-transform: uppercase;
+  color: var(--text-muted);
   display: block;
   margin-bottom: 6px;
 }
-.price-val {
+.price-huge {
   font-family: var(--font-heading);
   font-size: 3.2rem;
   font-weight: 900;
   color: var(--dark);
   line-height: 1;
 }
-.per-month {
+.price-month {
   font-size: 1.1rem;
   color: var(--text-muted);
   font-weight: 600;
 }
-.price-tag-sub {
+.price-sub-badge {
   display: inline-block;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--orange);
-  margin-top: 6px;
+  background: var(--orange-soft);
+  padding: 3px 12px;
+  border-radius: 100px;
+  margin: 6px 0 10px;
 }
-.price-separator {
+.badge-green-sub {
+  color: var(--green);
+  background: var(--green-soft);
+}
+.price-side-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.price-plus {
   font-size: 2.2rem;
   font-weight: 900;
   color: var(--orange);
 }
-.pricing-explanation {
+
+.roi-simple-box {
+  background: var(--green-soft);
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 0.95rem;
-  color: var(--text-muted);
-  max-width: 580px;
-  margin: 0 auto 30px;
+  color: var(--dark);
+  margin-bottom: 28px;
+  text-align: left;
+}
+.roi-simple-box i {
+  font-size: 1.4rem;
+  flex-shrink: 0;
 }
 
 /* =========================================================
    CIERRE FINAL
    ========================================================= */
-.section-cta {
-  background: var(--orange);
+.section-closing-final {
+  background: linear-gradient(150deg, #e26a27 0%, #cc5616 100%);
   color: #ffffff;
-  padding: 80px 0;
+  padding: 85px 0;
 }
-.cta-title {
+.closing-title-big {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 900;
   line-height: 1.2;
   margin-bottom: 20px;
 }
-.cta-statement {
-  font-size: 1.2rem;
+.closing-quote-text {
+  font-size: 1.25rem;
   line-height: 1.6;
   opacity: 0.95;
   margin-bottom: 36px;
 }
-.cta-big-question {
+.closing-question {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 900;
   margin-bottom: 20px;
 }
@@ -590,11 +717,15 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .hero-title { font-size: 2.1rem; }
-  .title-main { font-size: 1.7rem; }
+  .section-title { font-size: 1.7rem; }
   .top-bar-flex { justify-content: center; }
-  .feature-item-card { flex-direction: column; gap: 14px; }
-  .two-simple-blocks, .scope-clean-box { grid-template-columns: 1fr; }
-  .price-row-main { flex-direction: column; gap: 16px; }
-  .price-separator { display: none; }
-  .cta-title { font-size: 1.9rem; }
+  .ticket-reasons-grid,
+  .faq-simple-grid,
+  .scope-grid-clean { grid-template-columns: 1fr; }
+  .ticket-vs-grid { grid-template-columns: 1fr; }
+  .ticket-arrow { transform: rotate(90deg); margin: 6px 0; }
+  .price-split-boxes { grid-template-columns: 1fr; gap: 16px; }
+  .price-plus { display: none; }
+  .step-box { flex-direction: column; gap: 12px; }
+  .closing-title-big { font-size: 2rem; }
 }
